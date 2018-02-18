@@ -1,0 +1,33 @@
+.header {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-rows: 80px;
+  grid-area: h;
+  h1 {
+    right: 10vw;
+    top: 1%;
+    float: right;
+  }
+  h4 {
+    right: 10vw;
+    text-transform: uppercase;
+  }
+}
+
+.logo {
+  grid-column: span 1;
+  display: inline;
+  margin-left: 10vw;
+  img {
+    margin-top: 7%;
+    height: 75px;
+  }
+}
+
+.dev-name {
+  /* grid-column: span 1; */
+  position: absolute;
+  right: 10vw;
+  align-self: center;
+  text-align: end;
+}

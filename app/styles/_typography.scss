@@ -1,0 +1,41 @@
+h1 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 200;
+  margin: 0;
+  margin-top: 1%;
+}
+
+h3 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 200;
+  font-size: 2vw;
+  margin: 8px 0px;
+}
+
+h4 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 200;
+  font-size: 1.4rem;
+  margin: 5px;
+}
+
+span {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+}
+
+p {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-weight: 400;
+}
+
+p .caption,
+span .caption {
+  font-weight: 200;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}

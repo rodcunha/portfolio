@@ -1,6 +1,13 @@
 // bower:scss
 // endbower
 
+@import "normalize";
+@import "typography";
+@import "header";
+
+
+
+
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -9,23 +16,99 @@
 }
 
 body {
-  background: #fafafa;
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  color: #333;
+  font-size: 16px;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 300px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
+hr {
+  margin: 10px 0px;
+  border: 0;
+  height: 3px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.90), rgba(0, 0, 0, 0));
+  width: 100vw;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 100px auto-fit;
+  grid-template-areas:
+      "h h h h h h h h h h h h"
+      "i i i i i i i i i i i i"
+      "w w w w w w w w w w w w";
+}
+
+.full-width {
+  grid-area: i;
+}
+.hero-img-container {
+  position: relative;
+  max-width: 960px;
+  margin: 0 auto;
+  img {
+    width: 100%;
+    max-width: 960px;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.works-container {
+  grid-area: w;
+  grid-gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  align-items: center;
+  img {
+    clear: both;
+    display: block;
+    max-width: 90%;
+    /* max-width: 420px; */
+    margin: 10px auto;
+    grid-column: span 4;
+    align-self: center;
+  }
+}
+
+.section-title {
+  margin-left: 4%;
+  grid-column: span 12;
+  grid-row: row;
+  color: #7d97ad;
+}
+
+.caption {
+  color: #2d3c49;
+  display: block;
+  width: 90%;
+  max-width: 420px;
+  margin: 0 auto;
+  grid-column: span 4;
+  grid-row: row 3;
+  text-align: center;
+}
+
+.work-img {
+  grid-gap: 40px;
+  grid-column: span 4;
+  grid-row: row 2;
+  height: 250px;
+  h4 {
+    color: #fff;
+  }
+  img {
+    width: 90%;
+    max-height: 250px;
+  }
+}
+
+.heading-container {
+  position: absolute;
+  color: #FAFAFA;
+  left: 50px;
+  top: 30%;
   h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+    text-transform: uppercase;
   }
 }
