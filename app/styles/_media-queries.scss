@@ -1,3 +1,23 @@
-@media all and (max-width:768px) {
-  
+// Mixins
+
+@mixin small() {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media screen and (max-width: 728px) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @media screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@include small {
+
 }

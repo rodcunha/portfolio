@@ -1,13 +1,12 @@
 // bower:scss
 // endbower
 
+// IMPORTS
 @import "normalize";
 @import "typography";
 @import "header";
 
-
-
-
+// GLOBAL STYLES
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -42,6 +41,7 @@ hr {
 .full-width {
   grid-area: i;
 }
+
 .hero-img-container {
   position: relative;
   max-width: 960px;
@@ -110,5 +110,25 @@ hr {
   top: 30%;
   h1 {
     text-transform: uppercase;
+  }
+}
+
+// Mixins
+
+@mixin small() {
+  @media screen and (max-width: 375px) {
+    @content;
+  }
+}
+
+@mixin medium() {
+  @media screen and (max-width: 728px) {
+    @content;
+  }
+}
+
+@mixin large() {
+  @media screen and (max-width: 1024px) {
+    @content;
   }
 }
