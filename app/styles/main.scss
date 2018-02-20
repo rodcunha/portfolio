@@ -9,6 +9,7 @@ $white: rgba(255, 255, 255, 1);
 @import "normalize";
 @import "typography";
 @import "header";
+@import "media-queries";
 
 // GLOBAL STYLES
 .browserupgrade {
@@ -58,7 +59,7 @@ hr {
   }
 }
 
-.works-container {
+.work-container {
   grid-area: w;
   grid-gap: 10px;
   display: grid;
@@ -78,7 +79,6 @@ hr {
 .section-title {
   margin-left: 4%;
   grid-column: span 12;
-  grid-row: row;
   color: #7d97ad;
 }
 
@@ -111,8 +111,10 @@ hr {
   h4 {
     color: #fff;
     position: absolute;
-    bottom: 120px;
-    right: 45px;
+    top: 25px;
+    right: 7%;
+    padding-left: 27%;
+    max-height: 25px;
     display: inline-block;
     opacity: 0;
     transform: translateY(-80px);
@@ -122,8 +124,9 @@ hr {
   p {
     color: $white;
     position: absolute;
-    padding: 0px 40px;
-    bottom: 20px;
+    right: 7%;
+    padding-left: 27%;
+    top: 60px;
     opacity: 0;
     text-align: justify;
     transform: translateY(50px);
@@ -131,10 +134,10 @@ hr {
   }
   hr {
     position: absolute;
-    max-width: 85%;
+    max-width: 65%;
     background: $white;
-    bottom: 105px;
-    right: 45px;
+    top: 55px;
+    right: 7%;
     transform: translateX(-420px);
     transition: all 0.5s ease-in-out;
     opacity: 0;
@@ -162,6 +165,12 @@ hr {
   }
 }
 
+.works {
+  clear: both;
+  grid-column: span 4;
+  display: block;
+}
+
 // Mixins
 
 @mixin small() {
@@ -177,7 +186,75 @@ hr {
 }
 
 @mixin large() {
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1280px) {
     @content;
+  }
+}
+
+@include small {
+  h3 {
+    font-weight: bold;
+    font-size: 1.1em;
+    line-height: 1.2em;
+  }
+  p {
+    font-size: 0.9em;
+    line-height: 1em;
+  }
+  .work-container {
+    display: block;
+  }
+  .work-img {
+    p {
+      top: 60px;
+      max-width: 70%;
+      right: 15px;
+      padding: 0;
+      padding-top: 10px;
+    }
+    h3 {
+      top: 25px;
+      max-width: 70%;
+      right: 15px;
+      padding: 0;
+      padding-top: 10px;
+    }
+  }
+}
+
+@include medium {
+  h3 {
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.3em;
+  }
+  p {
+    font-size: 1em;
+    line-height: 1em;
+  }
+  .work-container {
+    display: block;
+  }
+}
+
+@include large {
+  .works {
+    grid-column: span 6;
+  }
+  .work-img {
+    p {
+      top: 60px;
+      max-width: 70%;
+      right: 6%;
+      padding: 0;
+      padding-top: 10px;
+    }
+    h3 {
+      top: 25px;
+      max-width: 70%;
+      right: 6%;
+      padding: 0;
+      padding-top: 10px;
+    }
   }
 }
