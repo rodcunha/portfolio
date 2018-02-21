@@ -65,6 +65,15 @@ hr {
   width: 100vw;
 }
 
+section {
+  display: block;
+  width: 100vw;
+}
+
+header {
+  width: 100vw;
+}
+
 .main-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -96,7 +105,7 @@ hr {
   grid-area: w;
   display: grid;
   grid-gap:30px;
-  margin: 0px auto;
+  margin: 0px 10%;
   grid-template-columns: repeat(12, 1fr);
   align-items: center;
   overflow:none;
@@ -133,7 +142,7 @@ hr {
   grid-row: row 2;
   height: auto;
   background-size: cover;
-      transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   &:hover .animate-text,
   &:hover .animated-rule {
     transform: translateY(0);
@@ -258,6 +267,16 @@ hr {
 
 
 @include small {
+  .dev-name {
+    h2 {
+      margin: 5px 0px;
+    }
+    h4 {
+      font-size: 1.1em;
+      line-height: 1.1em;
+      font-weight:200;
+    }
+  }
   h3 {
     font-weight: bold;
     font-size: 1.1em;
@@ -276,8 +295,8 @@ hr {
   }
   .work-img {
     p {
-      top: 60px;
-      max-width: 70%;
+      top: 20px;
+      max-width: 75%;
       right: 15px;
       padding: 0;
       padding-top: 10px;
@@ -290,13 +309,7 @@ hr {
       padding-top: 10px;
     }
   }
-  .text {
-    display: none;
-  }
   .heading-container {
-    p {
-      display:none;
-    }
     h1 {
       font-size: 5.5vw;
       max-width: 65vw;
@@ -304,18 +317,34 @@ hr {
   }
 }
 
-@include medium {
-  h3 {
-    font-weight: bold;
-    font-size: 1.3em;
-    line-height: 1.3em;
+.text {
+  h4 {
+    top: 5px;
+    font-size: 1em;
   }
-  p {
+  hr{
+    top: 20px;
+  }
+  p.animate-text {
+    top: 20px;
+  }
+}
+
+@include medium {
+  .work-container {
+    grid-column: span 12;
+    margin: 0 1%;
+    .works {
+      grid-column: 2 / -2;
+    }
+  }
+  h3 {
     font-size: 1em;
     line-height: 1em;
   }
-  .work-container {
-    display: block;
+  p {
+    font-size: 0.8em;
+    line-height: 0.85em;
   }
 }
 
